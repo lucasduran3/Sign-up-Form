@@ -1,0 +1,161 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background: linear-gradient(#1d0722 80%, #300238);
+  color: #fff;
+}
+
+.logo-section {
+  background: url(../images/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.logo {
+  background-color: rgba(0, 0, 0, 0.322);
+  grid-row: 2/3;
+  height: min-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.logo img {
+  width: 25%;
+}
+
+.logo span {
+  font-size: 4em;
+  font-family: "Aboreto";
+  color: #faebd7;
+  cursor: default;
+}
+
+.form-section {
+  display: flex;
+  gap: 5rem;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 100px;
+}
+
+.form-section header {
+  font-size: 2.7rem;
+  font-weight: bold;
+  color: #faebd7;
+  cursor: default;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+form .row {
+  display: flex;
+  column-gap: 20rem;
+}
+
+form .input-box {
+  position: relative;
+}
+
+form .input-box input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #faebd7;
+  color: #faebd7;
+  padding: 5px;
+  outline: none;
+}
+
+form .input-box label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #8a8a8a;
+  border-radius: 5px;
+  cursor: text;
+}
+
+form .input-box input:focus ~ label,
+form .input-box input:valid ~ label {
+  top: -23px;
+  left: 5px;
+  font-size: 0.8rem;
+  padding: 5px;
+  height: auto;
+  background-color: rgb(174, 0, 255);
+  color: #fff;
+  transition: all 0.2s;
+}
+
+form .input-box input:focus,
+form .input-box input:valid {
+  border: 1px solid rgb(174, 0, 255);
+  border-radius: 5px;
+  transition: all 0.7s;
+}
+
+form .input-box input::placeholder {
+  visibility: hidden;
+}
+
+form .input-box input:focus::placeholder {
+  visibility: visible;
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  position: absolute;
+  margin-top: 8px;
+  font-family: sans-serif;
+}
+
+.error .error-active {
+  padding: 0.3rem;
+}
+
+form .btn-section button {
+  width: 300px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 1rem;
+  background-color: rgb(174, 0, 255);
+  color: #faebd7;
+  cursor: pointer;
+}
+
+form .btn-section button:hover {
+  background-color: rgb(117, 51, 148);
+  transition: all 0.2s;
+}
+
+form .btn-section .login-text {
+  font-size: 0.9rem;
+  color: #8a8a8a;
+  font-style: italic;
+}
+
+form .btn-section .login-text span {
+  color: rgb(173, 59, 196);
+  font-style: normal;
+}
+
+form .btn-section .login-text span:hover {
+  cursor: pointer;
+  border-bottom: 1px solid #c7bdb0;
+  transition: all 0.2s;
+}

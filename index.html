@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/normalize.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <title>Sign-up Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo-section">
+        <div class="logo">
+          <img src="assets/images/cat-logo.svg" alt="" />
+          <span>Logo</span>
+        </div>
+      </div>
+      <div class="form-section">
+        <header>Get Started</header>
+        <form action="#" class="form" novalidate>
+          <div class="row">
+            <div class="input-box">
+              <input type="text" name="first-name" required id="first-name" />
+              <label for="first-name">FIRST NAME</label>
+              <div class="error error-active"></div>
+            </div>
+            <div class="input-box">
+              <input type="text" name="last-name" required id="last-name" />
+              <label for="last-name">LAST NAME</label>
+              <div class="error error-active"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-box">
+              <input type="email" name="email" required id="email" />
+              <label for="email">E-MAIL</label>
+              <div class="error error-active"></div>
+            </div>
+            <div class="input-box">
+              <input
+                type="tel"
+                name="phone-number"
+                id="phone-number"
+                pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
+                placeholder="XXX-XXX-XXXX"
+                required
+              />
+              <label for="phone-number">PHONE</label>
+              <div class="error error-active"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-box">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                minlength="8"
+                required
+              />
+              <label for="password">PASSWORD</label>
+              <div class="error error-active"></div>
+            </div>
+            <div class="input-box">
+              <input
+                type="password"
+                name="confirm-password"
+                id="confirm-pass"
+                minlength="8"
+                required
+              />
+              <label for="confirm-pass">CONFIRM PASSWORD</label>
+              <div class="error error-active"></div>
+            </div>
+          </div>
+          <div class="btn-section">
+            <button type="submit" class="submit-btn">Create Account</button>
+            <div class="login-text">
+              Already have an account..? <span>LOG IN</span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
