@@ -1,13 +1,15 @@
 * {
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 .container {
-  height: 100vh;
-  width: 100vw;
+  position: absolute;
+  height: 100%;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  background: linear-gradient(#1d0722 80%, #300238);
+
   color: #fff;
 }
 
@@ -16,13 +18,12 @@
   background-size: cover;
   background-position: center;
   display: grid;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(5, minmax(120px, auto));
 }
 
 .logo {
   background-color: rgba(0, 0, 0, 0.322);
   grid-row: 2/3;
-  height: min-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,26 +31,27 @@
 }
 
 .logo img {
-  width: 25%;
+  width: clamp(80px, 8vw, 200px);
 }
 
 .logo span {
-  font-size: 4em;
+  font-size: clamp(30px, 4vw, 60px);
   font-family: "Aboreto";
   color: #faebd7;
   cursor: default;
 }
 
 .form-section {
+  background: linear-gradient(#1d0722 80%, #300238);
   display: flex;
-  gap: 5rem;
+  gap: 10%;
   flex-direction: column;
   justify-content: center;
-  padding: 0 100px;
+  padding: 0 90px;
 }
 
 .form-section header {
-  font-size: 2.7rem;
+  font-size: 3rem;
   font-weight: bold;
   color: #faebd7;
   cursor: default;
@@ -63,7 +65,7 @@
 
 form .row {
   display: flex;
-  column-gap: 20rem;
+  column-gap: 25%;
 }
 
 form .input-box {
@@ -77,6 +79,7 @@ form .input-box input {
   color: #faebd7;
   padding: 5px;
   outline: none;
+  width: 100%;
 }
 
 form .input-box label {
@@ -128,14 +131,14 @@ form .input-box input:focus::placeholder {
 }
 
 form .btn-section button {
-  width: 300px;
-  height: 50px;
   border-radius: 5px;
   border: none;
   margin-bottom: 1rem;
   background-color: rgb(174, 0, 255);
   color: #faebd7;
   cursor: pointer;
+  font-size: 1.2rem;
+  padding: 10px 50px;
 }
 
 form .btn-section button:hover {
@@ -152,10 +155,91 @@ form .btn-section .login-text {
 form .btn-section .login-text span {
   color: rgb(173, 59, 196);
   font-style: normal;
+  width: 100%;
 }
 
 form .btn-section .login-text span:hover {
   cursor: pointer;
   border-bottom: 1px solid #c7bdb0;
   transition: all 0.2s;
+}
+
+.mobile-btm-nav {
+  text-decoration: none;
+  display: none;
+}
+.mobile-btm-nav > img {
+  transform: scale(0.3) rotateZ(180deg);
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-10px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    display: grid;
+    grid-template-rows: 1fr, 1fr;
+  }
+
+  .logo-section {
+    grid-row: 1/2;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+  }
+
+  .logo img {
+    width: clamp(200px, 80%, 400px);
+  }
+
+  .logo span {
+    font-size: 3rem;
+  }
+
+  .form-section {
+    grid-row: 2/3;
+    height: 100vh;
+    padding: 50px;
+    align-items: center;
+  }
+
+  .form-section header {
+    font-size: 2rem;
+  }
+
+  .form-section form {
+    gap: 3.5rem;
+  }
+
+  form .row {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    column-gap: 0;
+  }
+
+  .mobile-btm-nav {
+    display: block;
+    position: absolute;
+    align-self: center;
+    bottom: 0;
+    animation: float 1s cubic-bezier(0.59, 0.575, 0.565, 1) infinite;
+  }
 }
